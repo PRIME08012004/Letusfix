@@ -1,0 +1,84 @@
+
+body {
+    background-image:url(Selectionpagepic.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    margin: 0;
+    padding: 0;
+}
+
+
+.service-container {
+   
+    text-align: center;
+    background-image: url(Selectioncontainer.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    text-align: center;
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color:white;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    color: rgb(145, 52, 52);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+#submitBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+#submitBtn:hover {
+    background-color: #0056b3;
+}
+
+#providerList {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+
+#providerList li {
+    font-size: 18px;
+    margin: 5px 0;
+}

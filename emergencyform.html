@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+    <style>
+        
+        body {
+            background-image: url(Confirmation.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-image: url(confirmationcontainer.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        #confirmationMessage {
+            font-weight: bold;
+            color: #2304d4;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" style="color: #f0f0f0;">
+    <h1 style="color: #f0f0f0;">Emergency Booking </h1>
+    <form id="bookingForm">
+        <label for="timeSlot">*Select a Time Slot:</label>
+        <select id="timeSlot" name="timeSlot" required><br><br><br>
+            <option value="" disabled selected>Select timeSlot</option>
+            <option value=" 7PM-8pm">7PM-8PM</option>
+            <option value="8PM-9PM"> 8PM-9PM</option>
+            <option value="9PM-10PM">9PM-10PM</option>
+          
+            </select><br>
+
+        <label for="appointmentDate">*Select Appointment Date:</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required><br><br><br><br>
+        <label for="confirmation">Confirmation:</label>
+        <input type="checkbox" id="confirmation" name="confirmation">*I wanted emergency services<br><br><br><br>
+      
+        <input type="button" value="Submit" onclick="submitForm()">
+    </form>
+    <div id="confirmationMessage"></div>
+    </div>
+
+   
+    <script>
+        function submitForm() {
+            const timeSlot = document.getElementById("timeSlot").value;
+            const appointmentDate = document.getElementById("appointmentDate").value;
+            const confirmation = document.getElementById("confirmation").checked;
+            const confirmationMessage = document.getElementById("confirmationMessage");
+
+            if (timeSlot && appointmentDate && confirmation) {
+                if (confirm(`You have booked your appointment for ${appointmentDate} at time slot ${timeSlot}. Now you will be redirected towards the person you selected Discuss your problem with him.`)) {
+                    const whatsappLink = "https://wa.me/+919529388077"; 
+                    window.location.href = whatsappLink;
+                }
+            } else {
+                
+                confirmationMessage.textContent = "Please fill out all required fields (denoted by *) and check the confirmation checkbox.";
+            }
+        }
+
+        function goBack() {
+            window.location.href = "Web2.html";
+        }
+    
+    </script>
+    
+</body>
+</html>

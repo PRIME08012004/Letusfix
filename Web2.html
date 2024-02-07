@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Service</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+   
+    
+</head>
+<body>
+    <h1> How Can We Help You ?</h1>
+    <div class="service-container">
+        <h2 style="font-size: xx-large;">Select a Service</h2>
+        <form>
+            
+            <select name="service" id="service" required>
+                <option value="   " disabled selected>Select a service</option>
+                <option value="electrician">Electrician</option>
+                <option value="mechanic">Mechanical</option>
+                <option value="plumber">Plumber</option>
+                <option value="carpenter">Carpenter</option>
+                <option value="ac-repair">AC Repair</option>
+                <option value="fridge-repair">Fridge Repair</option>
+               
+
+                   
+            </select>
+            <button type="button" id="submitBtn">Submit</button>
+        </form>
+        <ul id="providerList"></ul>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const serviceSelect = document.getElementById("service");
+            const submitBtn = document.getElementById("submitBtn");
+
+            submitBtn.addEventListener("click", function() {
+                
+                if (serviceSelect.value === "electrician") {
+                 
+                    window.location.href = "tablewebElectrician.html";
+                }
+                        if (serviceSelect.value === "mechanic") {
+                 
+                        window.location.href = "tableMechanic.html";
+                }
+                             if (serviceSelect.value === "plumber") {
+                 
+                             window.location.href = "tableplumber.html";
+                }
+                                if (serviceSelect.value === "carpenter") {
+                 
+                                window.location.href = "tablecarpenter.html";
+                }
+                                    if (serviceSelect.value === "ac-repair") {
+                 
+                                    window.location.href = "tableacrepair.html";
+                }
+                                        if (serviceSelect.value === "fridge-repair") {
+                 
+                                        window.location.href = "tablefridgerepair.html";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

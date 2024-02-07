@@ -1,0 +1,57 @@
+
+body, h2 {
+        
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+    
+    }
+.login-container {
+    background-image: url(Containerimg.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    align-items: center;
+    text-align: center;
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+h2 {
+    color: #ccc;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+button[type="submit"] {
+
+   background-image: url(Main.jpg);
+   background-attachment:fixed ;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+button[type="submit"]:hover {
+    background-color: #281901;
+}

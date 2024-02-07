@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Let us Fix</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet1.css">
+</head>
+
+<body background="Main.jpg">
+    <div class="login-container" style="align-items: center;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Username (e.g., Username_1234)" id="username" required><br>
+            <input type="email" placeholder="Email Address" id="email" required><br>
+            <p id="emailError" style="color: red;"></p>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var usernameRegex = /^[a-zA-Z]+[_%$#@]+[0-9]{4}$/;
+            var gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+            if (usernameRegex.test(username) && gmailRegex.test(email)) {
+                window.location.href = "Web2.html";
+            } else {
+                if (!usernameRegex.test(username)) {
+                    document.getElementById("username").textContent = "Enter a valid Username format (e.g., Username_1234).";
+                } else {
+                    document.getElementById("emailError").textContent = "Enter a valid Gmail address.";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

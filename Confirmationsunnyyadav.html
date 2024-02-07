@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+    <style>
+
+        
+        .back-button {
+            background-color: #2a10bc;
+            color: #f2f2f2;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+                .back-button:hover {
+            background-color: #1a078d;
+        }
+        body {
+            background-image: url(Confirmation.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-image: url(confirmationcontainer.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+          
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color:white;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color:white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        #confirmationMessage {
+
+            font-weight: bold;
+            color: #2304d4;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<div>
+<body>
+    <div class="container">
+    <h1>Booking Confirmation</h1>
+    <form id="bookingForm">
+        <div class="timeslot" style="color: #f0f0f0;">
+        <label for="timeSlot">*Select a Time Slot:</label>
+        <select id="timeSlot" name="timeSlot" required><br><br><br>
+            <option value="" disabled selected>Select time slot</option>
+            <option value="10AM-11AM">10AM-11AM</option>
+            <option value="11AM-12AM ">11AM-12AM </option>
+            <option value="12AM-1PM">12AM-1PM</option>
+            <option value="1PM-2PM">1PM-2PM</option>
+            <option value="2PM-3PM">2PM-3PM</option>
+            <option value="3PM-4PM">3PM-4PM</option>
+            <option value="4PM-5PM">4PM-5PM</option>
+            <option value="5PM-6PM">5PM-6PM</option>
+            </select><br>
+        </div>
+            <div style="color: #f0f0f0;">
+            <label for="appointmentDate">*Select Appointment Date:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required><br><br>
+            </div>
+            <div class="checkbox" style="color: #f0f0f0;">
+            <label for="confirmation">Confirmation:</label>
+          
+            <input type="checkbox" id="confirmation" name="confirmation"> *I confirm my booking<br><br>
+            </div>
+            <div id="emergency" style="color: #f0f0f0;">
+            <p>If the time slot is not available, you should go with Emergency services.</p>
+            <input type="button" value="Emergency Services" onclick="Emergency()"><br><br>
+       
+            </div>    
+            <input type="button" value="Submit" onclick="submitForm()">
+            <button class="back-button" onclick="goBack()">Back</button>
+        </form>
+        <div id="confirmationMessage" style="color: red;"></div>
+    </div>
+
+    <script>
+        function submitForm() {
+            const timeSlot = document.getElementById("timeSlot").value;
+            const appointmentDate = document.getElementById("appointmentDate").value;
+            const confirmation = document.getElementById("confirmation").checked;
+            const confirmationMessage = document.getElementById("confirmationMessage");
+
+            if (timeSlot && appointmentDate && confirmation) {
+                if (confirm(`You have booked your appointment for ${appointmentDate} at time slot ${timeSlot}. Now you will be redirected towards the person you selected Discuss your problem with him.`)) {
+                    const whatsappLink = "https://wa.me/+919405683184"; 
+                    window.location.href = whatsappLink;
+                }
+            } else {
+                
+                confirmationMessage.textContent = "Please fill out all required fields (denoted by *) and check the confirmation checkbox.";
+            }
+        }
+
+        function goBack() {
+            window.location.href = "Web2.html";
+        }
+        function Emergency() {
+            window.location.href = "emergencyform.html";
+        }
+    </script>
+    
+</body>
+</div>
+</html>
