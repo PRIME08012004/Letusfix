@@ -23,7 +23,7 @@
             var usernameRegex = /^[a-zA-Z]+[_%$#@]+[0-9]{4}$/;
             var gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
-            if (usernameRegex.test(username) && gmailRegex.test(email)) {
+            if (usernameRegex.test(username) && gmailRegex.test(username)) {
                 window.location.href = "Web2.html";
             } else {
                 if (!usernameRegex.test(username)) {
